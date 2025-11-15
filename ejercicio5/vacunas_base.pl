@@ -16,8 +16,6 @@ tiene_edad(hernan, 9).
 tiene_edad(clara, 12).
 tiene_edad(joaquin, 18).
 
-tiene_indicacion(claudia, nada).
-tiene_indicacion(clara, nada).
 tiene_indicacion(hernan, anafilaxia).
 tiene_indicacion(joaquin, reaccion_alergica_grave).
 
