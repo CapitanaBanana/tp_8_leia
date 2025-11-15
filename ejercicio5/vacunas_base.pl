@@ -21,8 +21,9 @@ tiene_indicacion(joaquin, reaccion_alergica_grave).
 
 
 % Reglas de vacunas %
-tiene_edad_recomendada(EdadMinima, Persona) :- 
+tiene_edad_recomendada(Persona, Vacuna) :- 
     tiene_edad(Persona, EdadPersona),
+    edad_minima(Vacuna, EdadMinima),
     EdadPersona >= EdadMinima.
 
 inapto_indicacion(Persona, Vacuna) :- 
@@ -30,8 +31,7 @@ inapto_indicacion(Persona, Vacuna) :-
     tiene_indicacion(Persona, Contraindicacion).
 
 puede_vacunarse(Persona, Vacuna) :- 
-    edad_minima(Vacuna, EdadMinima),
-    tiene_edad_recomendada(EdadMinima, Persona),
+    tiene_edad_recomendada(Persona, Vacuna),
     \+ inapto_indicacion(Persona, Vacuna).
 
 
